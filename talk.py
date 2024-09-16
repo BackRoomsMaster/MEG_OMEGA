@@ -1,0 +1,127 @@
+import random
+import time
+
+def genera_intercettazione():
+    frasi = [
+        "Non possiamo fidarci di nessuno qui.",
+        "Il livello 37 è completamente instabile.",
+        "Ho trovato una porta che non dovrebbe esistere.",
+        "Le pareti... si stanno muovendo di nuovo.",
+        "C'è qualcosa che ci segue nell'ombra.",
+        "Ho perso il contatto con la squadra Alfa.",
+        "Questa mappa non ha senso, tutto è cambiato.",
+        "Ho sentito voci provenire da nessuna parte.",
+        "Il tempo qui scorre in modo diverso.",
+        "Non riesco a distinguere la realtà dalle allucinazioni.",
+        "Le luci continuano a lampeggiare in sequenze strane.",
+        "Ho visto qualcuno che assomigliava a me stesso.",
+        "L'acqua qui ha un sapore metallico.",
+        "I corridoi sembrano allungarsi mentre cammino.",
+        "Ho trovato delle scritte sul muro, ma non riesco a leggerle.",
+        "C'è un ronzio costante che mi sta facendo impazzire.",
+        "Le scale portano sempre allo stesso piano, non importa quante ne saliamo.",
+        "Ho visto una creatura che sembrava fatta di ombre.",
+        "Il mio orologio si è fermato, ma continuo a sentire ticchettii.",
+        "Le porte si aprono su stanze che non erano lì prima.",
+        "Ho trovato una radio, ma trasmette solo statica e sussurri.",
+        "Il pavimento sembra respirare sotto i miei piedi.",
+        "Ho incontrato qualcuno che dice di essere qui da secoli.",
+        "Le finestre mostrano paesaggi impossibili.",
+        "Ho trovato una stanza piena di manichini che sembravano muoversi.",
+        "C'è un odore di ozono nell'aria che diventa sempre più forte.",
+        "Ho visto la mia ombra muoversi indipendentemente da me.",
+        "Le porte si chiudono da sole dietro di noi.",
+        "Ho trovato un diario, ma le pagine si riempiono da sole mentre lo guardo.",
+        "C'è una nebbia gialla che sta invadendo questo livello.",
+        "Ho sentito il suono di una festa, ma non riesco a trovarne la fonte.",
+        "Le mie impronte digitali cambiano ogni volta che le controllo.",
+        "Ho visto un gruppo di persone, ma sono scomparse quando mi sono avvicinato.",
+        "C'è un'area dove la gravità sembra non funzionare.",
+        "Ho trovato una stanza piena di orologi, tutti con orari diversi.",
+        "Le mie comunicazioni vengono distorte in modi incomprensibili.",
+        "Ho visto un corridoio che sembrava non avere fine.",
+        "C'è un'eco che ripete le mie parole, ma leggermente diverse.",
+        "Ho trovato una porta che si apre su un muro solido.",
+        "Le ombre qui hanno una consistenza quasi solida.",
+        "Ho incontrato qualcuno che parlava al contrario.",
+        "C'è una stanza dove tutto è capovolto.",
+        "Ho visto numeri fluttuare nell'aria come se fossero vivi.",
+        "Le mie mani sembrano attraversare alcuni oggetti.",
+        "Ho trovato una fontana che emette un liquido nero.",
+        "C'è una zona dove i colori sembrano invertiti.",
+        "Ho sentito una conversazione tra due versioni di me stesso.",
+        "Le scale a volte portano a piani che non dovrebbero esistere.",
+        "Ho visto un gruppo di persone camminare sul soffitto.",
+        "C'è una stanza che sembra essere un negozio, ma non posso interagire con nulla.",
+        "Ho trovato un telefono che suona, ma quando rispondo sento solo me stesso.",
+        "Le pareti a volte diventano trasparenti, mostrando altri livelli.",
+        "Ho visto un orologio che conta alla rovescia, ma non so verso cosa.",
+        "C'è una zona dove la mia voce esce dalla bocca di qualcun altro.",
+        "Ho trovato una stanza piena di specchi, ma nessuno riflette correttamente.",
+        "Le luci seguono un ritmo che sembra un codice.",
+        "Ho visto una porta che si apre su se stessa all'infinito.",
+        "C'è un'area dove gli oggetti cadono verso l'alto.",
+        "Ho sentito una voce che narrava le mie azioni in tempo reale.",
+        "Le pareti a volte mostrano immagini di luoghi che non ho mai visto.",
+        "Ho trovato un libro che racconta la mia vita, incluso il futuro.",
+        "C'è una stanza dove il tempo sembra scorrere all'indietro.",
+        "Ho visto ombre che si muovono contro la direzione della luce.",
+        "Le mie impronte a volte appaiono prima che io cammini.",
+        "Ho trovato un computer che risponde alle domande prima che le faccia.",
+        "C'è un corridoio dove la mia destra e sinistra sono invertite.",
+        "Ho visto una versione invecchiata di me stesso che mi ha dato un avvertimento.",
+        "Le porte a volte portano a versioni alternative della stessa stanza.",
+        "Ho trovato una mappa che cambia ogni volta che la guardo.",
+        "C'è una zona dove posso vedere attraverso le pareti, ma solo con un occhio.",
+        "Ho sentito una melodia che sembra provenire dalle pareti stesse.",
+        "Le scale a volte portano a piani che ho già visitato, ma leggermente diversi.",
+        "Ho visto un gruppo di persone che ripetevano gli stessi movimenti all'infinito.",
+        "C'è una stanza dove gli oggetti si muovono quando non li guardo.",
+        "Ho trovato un orologio che mostra date future, ma cambia ogni secondo.",
+        "Le ombre qui hanno una loro volontà e a volte si ribellano.",
+        "Ho visto una porta che si apre su un cielo alieno.",
+        "C'è un'area dove posso sentire i pensieri degli altri.",
+        "Ho trovato un diario che racconta eventi che non sono ancora accaduti.",
+        "Le pareti a volte sussurrano segreti che non riesco a comprendere.",
+        "Ho visto me stesso entrare in una stanza, ma non sono mai uscito.",
+        "C'è una zona dove gli oggetti hanno emozioni e sentimenti.",
+        "Ho trovato una radio che trasmette conversazioni dal passato e dal futuro.",
+        "Le luci qui hanno una qualità quasi liquida.",
+        "Ho visto un corridoio che si estende all'infinito in entrambe le direzioni.",
+        "C'è una stanza dove posso vedere le memorie degli altri come film.",
+        "Ho trovato un telefono che mi permette di chiamare altre versioni di me stesso.",
+        "Le scale qui portano a volte a piani che esistono solo nei sogni.",
+        "Ho visto una porta che si apre su diverse epoche storiche.",
+        "C'è un'area dove le leggi della fisica sembrano essere opzionali.",
+        "Ho trovato uno specchio che mostra il mio riflesso con un ritardo di 5 minuti.",
+        "Le pareti qui cambiano colore in base alle emozioni di chi le guarda.",
+        "Ho visto una stanza che contiene una miniatura dell'intero complesso.",
+        "C'è un corridoio dove ogni passo mi porta più lontano dalla mia destinazione.",
+        "Ho trovato un ascensore che va in direzioni impossibili.",
+        "Le porte qui si aprono su ricordi invece che su stanze.",
+        "Ho visto una finestra che mostra un paesaggio diverso ogni volta che la guardo.",
+        "C'è una zona dove posso vedere gli echi di eventi passati e futuri.",
+        "Ho trovato un libro che si riscrive mentre lo leggo.",
+        "Le scale qui a volte portano a versioni alternative di me stesso.",
+        "Ho visto un gruppo di persone che invecchiavano rapidamente mentre li osservavo.",
+        "C'è una stanza dove gli oggetti si trasformano in altri oggetti casualmente.",
+        "Ho trovato un orologio che mostra il tempo in dimensioni diverse.",
+        "Le pareti qui a volte diventano liquide e posso attraversarle."
+    ]
+    return random.choice(frasi)
+
+def simula_intercettazioni():
+    print("Inizializzazione sistema di intercettazione...")
+    time.sleep(2)
+    print("Connessione stabilita. Intercettazione in corso...")
+    
+    for i in range(5):  # Genera 5 intercettazioni
+        time.sleep(random.uniform(1.5, 3.5))  # Pausa casuale tra le intercettazioni
+        print(f"\nIntercettazione #{i+1}:")
+        print(genera_intercettazione())
+    
+    print("\nFine delle intercettazioni. Disconnessione in corso...")
+    time.sleep(1)
+
+if __name__ == "__main__":
+    simula_intercettazioni()
