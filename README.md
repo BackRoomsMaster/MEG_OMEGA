@@ -2,10 +2,14 @@ MEG OMEGA :
 
 python meg_omega.py  
 
-Assicuratevi aver installato c++ (clang) prima di eseguire il comando.
+
+
+Per i prossimi programmi : assicuratevi aver installato c++ (clang) prima di eseguire il comando.
 
 V 1.0
-TERMINALE MEG 
+TERMINALE MEG  ( ATTUALMENTE RISULTA IN INGLESE NELLA PROSSIMA VERSIONE IMPLEMENTO LA TRADUZIONE E LA SELEZIONE DELLA LINGUA)
+
+Serve come database per ottenere informazioni sui livelli principali delle backrooms
 
 g++ -std=c++11 meg_terminal.cpp -o meg_terminal
 
